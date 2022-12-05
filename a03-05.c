@@ -1,6 +1,6 @@
 /** a03-05.c
 * ===========================================================
-* Name: 
+* Name:
 * Section:
 * Project: Assessment 3, Problem 5
 * ===========================================================
@@ -36,22 +36,38 @@ void print_bits(void* ptr, int num_bytes) {
 
 
 // YOUR CODE GOES HERE
+int replaceExponent(unsigned int N, unsigned int newExponent) {
+    // Replace the exponent of a floating point number with a new exponent
 
+    // Create a mask
+    unsigned int mask = 0b01111111100000000000000000000000;
+
+    // Shift the new exponent to the left by 23
+    newExponent = newExponent << 23;
+
+    // Clear the exponent bits
+    N = N & ~mask;
+
+    // Replace the exponent bits with the new exponent
+    N = N | newExponent;
+
+    return N;
+}
 
 
 int main() {
     // The following is test code that you can use/modify
     // unsigned int originalNumber = 0b00111110001000000000000000000000;
     // unsigned int newExponent    = 0b11110000;
-    
+
     // printf("Before:  ");
     // print_bits(&originalNumber, sizeof(int));
-    
+
     // printf("New Exp: ");
     // print_bits(&newExponent, sizeof(int));
 
     // int newIEEE = replaceExponent(originalNumber, newExponent);
-    
+
     // printf("After:   ");
     // print_bits(&newIEEE, sizeof(int));
 

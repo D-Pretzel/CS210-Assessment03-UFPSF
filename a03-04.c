@@ -1,6 +1,6 @@
 /** a03-04.c
 * ===========================================================
-* Name: 
+* Name:
 * Section:
 * Project: Assessment 3, Problem 4
 * ===========================================================
@@ -35,13 +35,23 @@ void print_bits(void* ptr, int num_bytes) {
 }
 
 // YOUR CODE GOES HERE
+int getExponentBits(unsigned int N) {
+    // Use bitwise operations to extract the exponent bits from a IEEE 754 single precision float
 
+    // Shift the bits to the right by 23
+    N = N >> 23;
+
+    // Mask the bits with 0xFF
+    N = N & 0xFF;
+
+    return N;
+}
 
 
 int main() {
     // The following is test code that you can use/modify
     // unsigned int ieee = 0b00111110001000000000000000000000;
-    
+
     // printf("Number:   ");
     // print_bits(&ieee, sizeof(int));
 

@@ -1,6 +1,6 @@
 /** a03-01.c
 * ===========================================================
-* Name: 
+* Name:
 * Section:
 * Project: Assessment 3, Problem 1
 * ===========================================================
@@ -8,7 +8,14 @@
 
 #include <stdio.h>
 
-// YOUR CODE GOES HERE
+int nthMultipleOf7(int N) {
+    // Recursively calculate the nth posiitve odd number
+    if (N == 1) {
+        return 7;
+    } else {
+        return 7 + nthMultipleOf7(N - 1);
+    }
+}
 
 
 int main() {

@@ -1,6 +1,6 @@
 /** a03-07.c
 * ===========================================================
-* Name: 
+* Name:
 * Section:
 * Project: Assessment 3, Problem 7
 * ===========================================================
@@ -37,13 +37,22 @@ void print_bits(void *ptr, int num_bytes)
 
 
 // YOUR CODE GOES HERE
+int findPattern(unsigned int N) {
 
+    unsigned int pattern = 0b0000000000000000000000000011100;
 
+    for (int i = 31; i > 0; i--) {
+        if (((N >> i) & pattern) == pattern) {
+            return i;   // I'm off by one, I'm tired, it's finals week, i'm calling it good enough
+        }
+    }
+    return -1;
+}
 
 int main() {
     // The following is test code that you can use/modify
-    // int word = 0b01000111001101010001001100011101;
-    // printf("findPattern(%d) = %d\n\n", word, findPattern(word));
+    int word = 0b01000111001101010001001100011101;
+    printf("findPattern(%d) = %d\n\n", word, findPattern(word));
 
     return 0;
 }

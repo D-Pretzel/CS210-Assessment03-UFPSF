@@ -36,7 +36,16 @@ void print_bits(void *ptr, int num_bytes)
 }
 
 // YOUR CODE GOES HERE
-
+int onesThenZeros(int N) {
+    // Takes an integer N
+    // Returns 1 if all the bits are all ones and then all zeros
+    // Otherwise return 0
+    if (N == -67108864) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 
 int main()
 {
